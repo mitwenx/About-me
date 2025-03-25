@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonRide - Holographic Cycling Tracker</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="container">
+        <header>
+            <div class="logo">NEON<span style="color: var(--secondary);">RIDE</span></div>
+            <div class="connection-status">
+                <span id="gps-status">GPS: <span class="status-off">OFFLINE</span></span>
+            </div>
+        </header>
+
+        <div class="holographic-panel stats-panel">
+            <div class="panel-title">Live Stats</div>
+            <div class="stat-card">
+                <div class="stat-label">Current Speed</div>
+                <div class="stat-value" id="current-speed">0.0</div>
+                <div class="stat-unit">km/h</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Distance</div>
+                <div class="stat-value" id="distance">0.00</div>
+                <div class="stat-unit">km</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Duration</div>
+                <div class="stat-value" id="duration">00:00</div>
+                <div class="stat-unit">hh:mm</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Avg Speed</div>
+                <div class="stat-value" id="avg-speed">0.0</div>
+                <div class="stat-unit">km/h</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Max Speed</div>
+                <div class="stat-value" id="max-speed">0.0</div>
+                <div class="stat-unit">km/h</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Elevation</div>
+                <div class="stat-value" id="elevation">0</div>
+                <div class="stat-unit">m</div>
+            </div>
+        </div>
+
+        <div class="holographic-panel">
+            <div class="panel-title">Live Map</div>
+            <div id="map-container">
+                <div id="map"></div>
+                <div class="map-overlay">
+                    <span id="map-coords">0.0000, 0.0000</span>
+                </div>
+            </div>
+            <div class="controls-panel">
+                <button id="start-btn" class="btn btn-primary">Start Ride</button>
+                <button id="stop-btn" class="btn btn-secondary" disabled>End Ride</button>
+                <button id="center-btn" class="btn btn-secondary">Center Map</button>
+            </div>
+        </div>
+
+        <div class="holographic-panel history-panel">
+            <div class="panel-title">Ride History</div>
+            <div class="history-list" id="history-list">
+                <div class="history-empty">No rides recorded yet. Start your first ride!</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
